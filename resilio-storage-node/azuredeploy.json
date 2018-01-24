@@ -24,16 +24,16 @@
       }
   },
   "variables": {
-      "vnetName" : "[concat(parameters('virtualMachineName'), 'vnet']",
-      "publicIpAddressName" : "[concat(parameters('virtualMachineName'), 'pip']",
+      "vnetName" : "[concat(parameters('virtualMachineName'), 'vnet')]",
+      "publicIpAddressName" : "[concat(parameters('virtualMachineName'), 'pip')]",
       "vnetId": "[resourceId('storagevm','Microsoft.Network/virtualNetworks', variables('vnetName'))]",
-      "subnetName" : "[concat(parameters('virtualMachineName'), 'sn']",
+      "subnetName" : "[concat(parameters('virtualMachineName'), 'sn')]",
       "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
       "addressPrefix" : "10.0.0.0/24",
       "subnetPrefix" : "10.0.0.0/24",
-      "networkInterfaceName" : "[concat(parameters('virtualMachineName'), 'nic']",
-      "networkSecurityGroupName" : "[concat(parameters('virtualMachineName'), 'nsg']",
-      "storageAccountName" : "[concat(parameters('virtualMachineName'), 'sa']",
+      "networkInterfaceName" : "[concat(parameters('virtualMachineName'), 'nic')]",
+      "networkSecurityGroupName" : "[concat(parameters('virtualMachineName'), 'nsg')]",
+      "storageAccountName" : "[concat(parameters('virtualMachineName'), 'sa')]",
       "storageAccountType" : "Standard_LRS"
   },
   "resources": [
