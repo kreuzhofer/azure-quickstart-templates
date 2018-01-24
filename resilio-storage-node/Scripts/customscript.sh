@@ -50,6 +50,7 @@ systemctl start resilio-sync
 
 # Now since resilio is running, we need to set up a https proxy to forward https requests to the internal resilio port 8888 with http.
 # It is much more secure than just opening port 8888 to the world.
+# See: https://www.digitalocean.com/community/tutorials/how-to-implement-ssl-termination-with-haproxy-on-ubuntu-14-04
 
 # Create a self signed certificate for ssl
 openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -keyout /tmp/ssl.key -out /tmp/ssl.crt -subj "/C=US/ST=CA/L=San Francisco/O=Snakeoil/OU=IT Department/CN=$hostname"

@@ -226,6 +226,19 @@
                       }
                   },
                   {
+                    "name": "HTTP",
+                    "properties": {
+                        "priority": 100,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "80"
+                    }
+                  },
+                  {
                       "name": "default-allow-ssh",
                       "properties": {
                           "priority": 1000,
