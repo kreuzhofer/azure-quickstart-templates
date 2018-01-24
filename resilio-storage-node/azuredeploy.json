@@ -119,7 +119,7 @@
                       "value": "[resourceGroup().location]"
                   },
                   "fileUris": {
-                      "value": ["https://raw.githubusercontent.com/kreuzhofer/resilio_azure_quickstart_template/master/Deployment/customscript.sh","https://raw.githubusercontent.com/kreuzhofer/resilio_azure_quickstart_template/master/Deployment/haproxy.cfg"]
+                      "value": ["https://raw.githubusercontent.com/kreuzhofer/azure-quickstart-templates/master/resilio-storage-node/Scripts/customscript.sh","https://raw.githubusercontent.com/kreuzhofer/azure-quickstart-templates/master/resilio-storage-node/Scripts/haproxy.cfg"]
                   },
                   "commandToExecute": {
                       "value": "[concat('sh customscript.sh -h', reference(variables('publicIPAddressName')).dnsSettings.fqdn)]"
