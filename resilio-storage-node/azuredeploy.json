@@ -101,7 +101,7 @@
               },
               "parameters": {
                   "vmName": {
-                      "value": "storagevm"
+                      "value": "[parameters('virtualMachineName')]"
                   },
                   "location": {
                       "value": "[resourceGroup().location]"
