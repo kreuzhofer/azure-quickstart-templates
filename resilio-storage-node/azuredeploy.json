@@ -74,9 +74,9 @@
                       "version": "latest"
                   },
                   "osDisk": {
-                      "createOption": "fromImage",
+                      "createOption": "FromImage",
                       "vhd": {
-                          "uri": "[concat(concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2015-06-15').primaryEndpoints['blob'], 'vhds/'), parameters('virtualMachineName'), '20180124104205.vhd')]"
+                          "uri": "[concat(concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2015-06-15').primaryEndpoints['blob'], 'vhds/'), parameters('virtualMachineName'), '.vhd')]"
                       },
                       "name": "[parameters('virtualMachineName')]"
                   },
@@ -119,10 +119,10 @@
                       "value": "[resourceGroup().location]"
                   },
                   "fileUris": {
-                      "value": ["https://raw.githubusercontent.com/kreuzhofer/resilio_azure_quickstart_template/master/Deployment/customscript.sh"]
+                      "value": ["https://raw.githubusercontent.com/kreuzhofer/resilio_azure_quickstart_template/master/Deployment/customscript.sh","https://raw.githubusercontent.com/kreuzhofer/resilio_azure_quickstart_template/master/Deployment/haproxy.cfg"]
                   },
                   "commandToExecute": {
-                      "value": "sh customscript.sh"
+                      "value": "[concat('sh customscript.sh -h', reference(variables('publicIPAddressName')).dnsSettings.fqdn)]"
                   }
               }
           },
@@ -196,7 +196,10 @@
           "apiVersion": "2017-08-01",
           "location": "[resourceGroup().location]",
           "properties": {
-              "publicIpAllocationMethod": "Static"
+              "publicIpAllocationMethod": "Static",
+              "dnsSettings": {
+                "domainNameLabel": "[parameters('virtualMachineName')]"
+              }
           },
           "sku": {
               "name": "Basic"
