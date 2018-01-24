@@ -14,41 +14,8 @@
       "adminUsername": {
           "value": ""
       },
-      "virtualNetworkName": {
-          "value": "storagevm-vnet"
-      },
-      "networkInterfaceName": {
-          "value": "storagevm797"
-      },
-      "networkSecurityGroupName": {
-          "value": "storagevm-nsg"
-      },
       "adminPublicKey": {
           "value": ""
-      },
-      "storageAccountName": {
-          "value": "storagevmdisks984"
-      },
-      "storageAccountType": {
-          "value": "Standard_LRS"
-      },
-      "addressPrefix": {
-          "value": "10.0.0.0/24"
-      },
-      "subnetName": {
-          "value": "default"
-      },
-      "subnetPrefix": {
-          "value": "10.0.0.0/24"
-      },
-      "publicIpAddressName": {
-          "value": "storagevm-pip"
-      },
-      "publicIpAddressType": {
-          "value": "Static"
-      },
-      "publicIpAddressSku": {
-          "value": "Basic"
       }
   }
 }
