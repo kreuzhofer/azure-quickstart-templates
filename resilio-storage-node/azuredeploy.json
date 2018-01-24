@@ -26,7 +26,7 @@
   "variables": {
       "vnetName" : "[concat(parameters('virtualMachineName'), 'vnet')]",
       "publicIpAddressName" : "[concat(parameters('virtualMachineName'), 'pip')]",
-      "vnetId": "[resourceId('storagevm','Microsoft.Network/virtualNetworks', variables('vnetName'))]",
+      "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]",
       "subnetName" : "[concat(parameters('virtualMachineName'), 'sn')]",
       "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
       "addressPrefix" : "10.0.0.0/24",
@@ -75,7 +75,7 @@
                   "osDisk": {
                       "createOption": "fromImage",
                       "vhd": {
-                          "uri": "[concat(concat(reference(resourceId('storagevm', 'Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2015-06-15').primaryEndpoints['blob'], 'vhds/'), parameters('virtualMachineName'), '20180124104205.vhd')]"
+                          "uri": "[concat(concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2015-06-15').primaryEndpoints['blob'], 'vhds/'), parameters('virtualMachineName'), '20180124104205.vhd')]"
                       },
                       "name": "[parameters('virtualMachineName')]"
                   },
@@ -168,13 +168,13 @@
                           },
                           "privateIPAllocationMethod": "Dynamic",
                           "publicIpAddress": {
-                              "id": "[resourceId('storagevm','Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
+                              "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
                           }
                       }
                   }
               ],
               "networkSecurityGroup": {
-                  "id": "[resourceId('storagevm', 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+                  "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
               }
           }
       },
