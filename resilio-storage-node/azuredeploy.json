@@ -228,7 +228,7 @@
                   {
                     "name": "HTTP",
                     "properties": {
-                        "priority": 100,
+                        "priority": 101,
                         "protocol": "TCP",
                         "access": "Allow",
                         "direction": "Inbound",
