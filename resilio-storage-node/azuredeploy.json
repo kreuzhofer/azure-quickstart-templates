@@ -34,7 +34,8 @@
       "networkInterfaceName" : "[concat(parameters('virtualMachineName'), 'nic')]",
       "networkSecurityGroupName" : "[concat(parameters('virtualMachineName'), 'nsg')]",
       "storageAccountName" : "[concat(parameters('virtualMachineName'), 'sa')]",
-      "storageAccountType" : "Standard_LRS"
+      "storageAccountType" : "Standard_LRS",
+      "dataDiskName" : "[concat(parameters('virtualMachineName'), '-data')]"
   },
   "resources": [
       {
@@ -79,7 +80,18 @@
                       },
                       "name": "[parameters('virtualMachineName')]"
                   },
-                  "dataDisks": []
+                  "dataDisks": [
+                    {
+                        "lun": 0,
+                        "name": "[variables('dataDiskName')]",
+                        "createOption": "Empty",
+                        "vhd": {
+                            "uri": "[concat('https', '://', variables('storageAccountName'), '.blob.core.windows.net', concat('/vhds/', variables('dataDiskName'), '.vhd'))]"
+                        },
+                        "caching": "None",
+                        "diskSizeGB": 4095
+                    }
+                ]
               },
               "networkProfile": {
                   "networkInterfaces": [
