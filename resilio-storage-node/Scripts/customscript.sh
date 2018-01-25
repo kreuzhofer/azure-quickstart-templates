@@ -68,6 +68,6 @@ cp haproxy.cfg /etc/haproxy/
 systemctl enable haproxy
 
 # start haproxy
-service haproxy start
+service haproxy restart
 
 # We are done!
