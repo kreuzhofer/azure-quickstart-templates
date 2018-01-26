@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "Resilio Sync Node",
+  "description": "This template makes it easy to deploy a Resilio sync node to Azure. It also makes the Web GUI available over secure HTTPS instead over HTTP port 8888 to have a secure way to connect to Resilio.",
+  "summary": "This template makes it easy to deploy a Resilio sync node to Azure.",
+  "githubUsername": "kreuzhofer",
+  "dateUpdated": "2018-01-24"
+}
